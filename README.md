@@ -29,7 +29,7 @@ It will parse cursor line and expand it base on below syntax.
 `range` has two forms.
 
 1. Single number
-   `10|print({%d})` will expand as
+   `10|print({%d})` will expand to
 
 ```
 print(1)
@@ -45,7 +45,7 @@ print(10)
 ```
 
 2. Range format
-   `3,7|print({%d})` will expand as
+   `3,7|print({%d})` will expand to
 
 ```
 print(3)
@@ -59,7 +59,7 @@ print(7)
 
 _expr_ is a string contains multiple `{%d}` parts, the content inside {} will be eval as lua expression.
 
-`3|{%d} + {%d+1} + {%d+2}` will expand as
+`3|{%d} + {%d+1} + {%d+2}` will expand to
 
 ```
 1 + 2 + 3
@@ -67,7 +67,7 @@ _expr_ is a string contains multiple `{%d}` parts, the content inside {} will be
 3 + 4 + 5
 ```
 
-`3|{%d .. ' hello world ' .. %d*3}`
+`3|{%d .. ' hello world ' .. %d*3}` will expand to
 
 ```
 1 hello world 3
