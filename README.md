@@ -17,7 +17,7 @@ Expand and repeat expression to multiple lines for neovim.
 # Usage
 
 ```lua
-require("nvim-expand-expr").expand()
+require("expand_expr").expand()
 ```
 
 It will parse cursor line and expand it base on below syntax.
