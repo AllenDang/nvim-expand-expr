@@ -2,6 +2,8 @@
 
 Expand and repeat expression to multiple lines for neovim.
 
+![demo.gif!](https://github.com/AllenDang/nvim-expand-expr/blob/main/demo.gif)
+
 # Requirements
 
 `Neovim >= 0.5`
@@ -9,6 +11,7 @@ Expand and repeat expression to multiple lines for neovim.
 # Installation
 
 [packer.nvim](https://github.com/wbthomason/packer.nvim)
+
 `use 'AllenDang/nvim-expand-expr'`
 
 # Usage
