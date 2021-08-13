@@ -12,7 +12,7 @@ end
 -- range: 10|... or 1,10|...
 -- expr: {%d} or {%d+1}
 -- anything inside {} is a lua expression
-function M.expand_expr()
+function M.expand()
   local expr = vim.api.nvim_get_current_line()
   local pos = string.find(expr, "|")
   local range = string.sub(expr, 1, pos - 1)
