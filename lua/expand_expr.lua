@@ -61,7 +61,14 @@ function M.expand()
     -- eval expression parts
     for _, ep in ipairs(expr_parts) do
       local e = replace(ep.expression, "%d", i)
-      local value = vim.api.nvim_eval(e)
+
+      -- eval using lua
+      local fn = loadstring("return " .. e)
+
+      local value = e
+      if type(fn) == "function" then
+        value = fn()
+      end
 
       temp_line = replace(temp_line, ep.original, value)
     end
