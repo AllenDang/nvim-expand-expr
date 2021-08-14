@@ -55,7 +55,7 @@ function M.expand()
     })
   end
 
-  local lines = { "" }
+  local lines = {}
   for i = from, to do
     local temp_line = content
     -- eval expression parts
@@ -76,8 +76,9 @@ function M.expand()
     table.insert(lines, temp_line)
   end
 
-  vim.api.nvim_del_current_line()
-  vim.api.nvim_put(lines, "", true, true)
+  local cursor_pos = vim.api.nvim_win_get_cursor(0)
+  local row_num = cursor_pos[1]
+  vim.api.nvim_buf_set_lines(0, row_num - 1, row_num, true, lines)
 end
 
 return M
